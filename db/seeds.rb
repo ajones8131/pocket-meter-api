@@ -15,3 +15,13 @@
 ].each do |user_attributes|
   User.create(user_attributes)
 end
+
+[
+  { username: "ajones",  description: "Good Times",  rating: 5, timestamp: '2016-05-16T12:00:35' },
+  { username: "foobar",  description: "Bad Times",   rating: 2, timestamp: '2016-05-15T11:00:35' },
+  { username: "jdoe",    description: "Okay Times",  rating: 4, timestamp: '2016-05-14T2:00:35'  },
+  { username: "asmith",  description: "Meh Times",   rating: 3, timestamp: '2016-05-13T3:00:35'  },
+  { username: "rwilson", description: "Great Times", rating: 5, timestamp: '2016-05-12T4:00:35'  },
+].each do |comment_attributes|
+  Comment.create(comment_attributes)
+end
