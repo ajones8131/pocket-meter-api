@@ -5,26 +5,25 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+User.delete_all
+Comment.delete_all
 
-[
-  { username: "ajones" },
-  { username: "foobar" },
-  { username: "jdoe" },
-  { username: "asmith" },
-  { username: "rwilson" },
-].each do |user_attributes|
-  user = User.create(user_attributes)
-  user.comments.build( username: "ajones",  description: "Good Times",  rating: 5, timestamp: '2016-05-16T12:00:35' )
-  user.comments.build( username: "foobar",  description: "Bad Times",   rating: 2, timestamp: '2016-05-15T11:00:35' )
-  user.save
-end
+userOne = User.create!(username: "ajones")
+userOne.comments.create!( username: "ajones",  description: "Good Times",  rating: 5, timestamp: '2016-05-16T12:00:35' )
+userOne.comments.create!( username: "ajones",  description: "Bad Times",   rating: 2, timestamp: '2016-05-15T11:00:35' )
 
-# [
-#   { username: "ajones",  description: "Good Times",  rating: 5, timestamp: '2016-05-16T12:00:35' },
-#   { username: "foobar",  description: "Bad Times",   rating: 2, timestamp: '2016-05-15T11:00:35' },
-#   { username: "jdoe",    description: "Okay Times",  rating: 4, timestamp: '2016-05-14T2:00:35'  },
-#   { username: "asmith",  description: "Meh Times",   rating: 3, timestamp: '2016-05-13T3:00:35'  },
-#   { username: "rwilson", description: "Great Times", rating: 5, timestamp: '2016-05-12T4:00:35'  },
-# ].each do |comment_attributes|
-#   Comment.create(comment_attributes)
-# end
+userTwo = User.create!(username: "foobar")
+userTwo.comments.create!( username: "foobar",  description: "Good Times",  rating: 5, timestamp: '2016-05-16T12:00:35' )
+userTwo.comments.create!( username: "foobar",  description: "Bad Times",   rating: 2, timestamp: '2016-05-15T11:00:35' )
+
+userThree = User.create!(username: "jdoe")
+userThree.comments.create!( username: "jdoe",  description: "Good Times",  rating: 5, timestamp: '2016-05-16T12:00:35' )
+userThree.comments.create!( username: "jdoe",  description: "Bad Times",   rating: 2, timestamp: '2016-05-15T11:00:35' )
+
+userFour = User.create!(username: "asmith")
+userFour.comments.create!( username: "asmith",  description: "Good Times",  rating: 5, timestamp: '2016-05-16T12:00:35' )
+userFour.comments.create!( username: "asmith",  description: "Bad Times",   rating: 2, timestamp: '2016-05-15T11:00:35' )
+
+userFive = User.create!(username: "rwilson")
+userFive.comments.create!( username: "rwilson",  description: "Good Times",  rating: 5, timestamp: '2016-05-16T12:00:35' )
+userFive.comments.create!( username: "rwilson",  description: "Bad Times",   rating: 2, timestamp: '2016-05-15T11:00:35' )
