@@ -4,9 +4,13 @@ source 'https://rubygems.org'
 
 
 gem 'rails', '4.2.6'
+# create api-only application
 gem 'rails-api'
 gem 'sqlite3'
+# serializer for data
 gem 'active_model_serializers', '~> 0.8.1'
+# cross origin policy rack middleware
+gem 'rack-cors', :require => 'rack/cors'
 
 group :development do
   gem 'spring'
