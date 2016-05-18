@@ -6,7 +6,8 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.6'
 # create api-only application
 gem 'rails-api'
-gem 'sqlite3'
+# gem 'sqlite3'
+gem 'pg'
 # serializer for data
 gem 'active_model_serializers', '~> 0.8.1'
 # cross origin policy rack middleware

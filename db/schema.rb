@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20160517173547) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "comments", force: :cascade do |t|
     t.string   "username"
     t.string   "description"
@@ -23,7 +26,7 @@ ActiveRecord::Schema.define(version: 20160517173547) do
     t.integer  "user_id"
   end
 
-  add_index "comments", ["user_id"], name: "index_comments_on_user_id"
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "username"
